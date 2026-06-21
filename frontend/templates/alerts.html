@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🚨 Alerts</title>
+    <style>
+        body { 
+            background: #FFF5E6;   /* soft cream color */
+        color: #ffdbfa;
+        }
+
+        .title {
+            font-size: 45px;
+            font-weight: bold;
+            color: #1a1119;
+            text-align: center;
+            margin-top: 30px;
+            text-shadow: 3px 3px 10px #b30086;
+        }
+
+        table {
+            width: 90%; 
+            border-collapse: collapse;
+            margin: 30px auto;
+            background: white; 
+            border-radius: 10px; 
+            overflow: hidden;
+            box-shadow: 0px 0px 15px rgba(109, 82, 100, 0.7);
+        }
+
+        th {
+            background: #191016; 
+            color: white; 
+            padding: 14px;
+            font-size: 18px;
+        }
+
+        td {
+            padding: 12px; 
+            text-align: center; 
+            font-size: 16px;
+            border-bottom: 1px solid white;
+        }
+
+        .btn {
+            display: inline-block;
+            background:#181316;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 30px;
+            box-shadow: 0px 0px 10px rgba(255, 146, 235, 0.7);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: #0d0a0c;
+        }
+    </style>
+</head>
+<body>
+
+<h2 class="title">🚨 Active Alerts</h2>
+<a class="btn" href="/">⬅ Back</a>
+
+<table>
+    <tr><th>Junction</th><th>Alert Type</th><th>Time</th></tr>
+
+    {% for a in alerts %}
+    <tr>
+        <td>{{ a.junction }}</td>
+        <td style="color:#FF4655; font-weight:bold;">{{ a.alert_type }}</td>
+        <td>{{ a.time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
